@@ -1151,7 +1151,7 @@ static MPP_RET m2vd_alloc_frame(M2VDParserContext *ctx)
             mpp_frame_set_hor_stride(ctx->frame_cur->f, ctx->display_width);
             mpp_frame_set_ver_stride(ctx->frame_cur->f, ctx->display_height);
             mpp_frame_set_errinfo(ctx->frame_cur->f, 0);
-            mpp_frame_set_pts(ctx->frame_cur->f, Time * 1000);
+            mpp_frame_set_pts(ctx->frame_cur->f, ctx->pts);
             ctx->frame_cur->flags = M2V_OUT_FLAG;
             if (ctx->seq_ext_head.progressive_sequence) {
                 frametype = MPP_FRAME_FLAG_FRAME;
