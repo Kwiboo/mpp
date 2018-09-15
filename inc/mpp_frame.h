@@ -190,6 +190,14 @@ typedef enum {
     MPP_FMT_BUTT            = MPP_FMT_COMPLEX_BUTT,
 } MppFrameFormat;
 
+/**
+ * Rational number (pair of numerator and denominator).
+ */
+typedef struct MppFrameRational {
+    RK_S32 num; ///< Numerator
+    RK_S32 den; ///< Denominator
+} MppFrameRational;
+
 typedef enum {
     MPP_FRAME_ERR_UNKNOW           = 0x0001,
     MPP_FRAME_ERR_UNSUPPORT        = 0x0002,
@@ -263,6 +271,8 @@ void    mpp_frame_set_chroma_location(MppFrame frame, MppFrameChromaLocation chr
 MppFrameFormat mpp_frame_get_fmt(MppFrame frame);
 void    mpp_frame_set_fmt(MppFrame frame, MppFrameFormat fmt);
 
+MppFrameRational mpp_frame_get_sar(const MppFrame frame);
+void    mpp_frame_set_sar(MppFrame frame, MppFrameRational sar);
 
 /*
  * HDR parameter

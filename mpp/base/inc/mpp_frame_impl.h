@@ -87,6 +87,7 @@ struct MppFrameImpl_t {
     MppFrameChromaLocation chroma_location;
 
     MppFrameFormat fmt;
+    MppFrameRational sar;
     /*
      * buffer information
      * NOTE: buf_size only access internally
